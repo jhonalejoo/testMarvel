@@ -16,7 +16,24 @@ PODS:
   - hermes-engine (0.73.2):
     - hermes-engine/Pre-built (= 0.73.2)
   - hermes-engine/Pre-built (0.73.2)
+  - libavif/core (0.11.1)
+  - libavif/libdav1d (0.11.1):
+    - libavif/core
+    - libdav1d (>= 0.6.0)
+  - libdav1d (1.2.0)
   - libevent (2.1.12)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
   - RCT-Folly (2022.05.16.00):
     - boost
     - DoubleConversion
@@ -888,6 +905,8 @@ PODS:
   - React-Mapbuffer (0.73.2):
     - glog
     - React-debug
+  - react-native-hash (3.0.3):
+    - React
   - react-native-safe-area-context (5.1.0):
     - React-Core
   - React-nativeconfig (0.73.2)
@@ -1059,6 +1078,13 @@ PODS:
     - React-perflogger (= 0.73.2)
   - RNCAsyncStorage (2.1.0):
     - React-Core
+  - RNFastImage (8.9.1):
+    - libavif/core (~> 0.11.1)
+    - libavif/libdav1d (~> 0.11.1)
+    - React-Core
+    - SDWebImage (>= 5.19.1)
+    - SDWebImageAVIFCoder (~> 0.11.0)
+    - SDWebImageWebPCoder (~> 0.14)
   - RNGestureHandler (2.22.0):
     - glog
     - RCT-Folly (= 2022.05.16.00)
@@ -1095,6 +1121,15 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
+  - SDWebImage (5.20.0):
+    - SDWebImage/Core (= 5.20.0)
+  - SDWebImage/Core (5.20.0)
+  - SDWebImageAVIFCoder (0.11.0):
+    - libavif/core (>= 0.11.0)
+    - SDWebImage (~> 5.10)
+  - SDWebImageWebPCoder (0.14.6):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.17)
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -1130,6 +1165,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector-modern`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - react-native-hash (from `../node_modules/react-native-hash`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
@@ -1152,6 +1188,7 @@ DEPENDENCIES:
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
+  - "RNFastImage (from `../node_modules/@d11/react-native-fast-image`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
@@ -1161,7 +1198,13 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - fmt
+    - libavif
+    - libdav1d
     - libevent
+    - libwebp
+    - SDWebImage
+    - SDWebImageAVIFCoder
+    - SDWebImageWebPCoder
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1222,6 +1265,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-hash:
+    :path: "../node_modules/react-native-hash"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
@@ -1266,6 +1311,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNCAsyncStorage:
     :path: "../node_modules/@react-native-async-storage/async-storage"
+  RNFastImage:
+    :path: "../node_modules/@d11/react-native-fast-image"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNReanimated:
@@ -1286,7 +1333,10 @@ SPEC CHECKSUMS:
   fmt: ff9d55029c625d3757ed641535fd4a75fedc7ce9
   glog: c5d68082e772fa1c511173d6b30a9de2c05a69a2
   hermes-engine: b361c9ef5ef3cda53f66e195599b47e1f84ffa35
+  libavif: 84bbb62fb232c3018d6f1bab79beea87e35de7b7
+  libdav1d: 23581a4d8ec811ff171ed5e2e05cd27bad64c39f
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   RCT-Folly: cd21f1661364f975ae76b3308167ad66b09f53f5
   RCTRequired: 9b1e7e262745fb671e33c51c1078d093bd30e322
   RCTTypeSafety: a759e3b086eccf3e2cbf2493d22f28e082f958e6
@@ -1308,6 +1358,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 03644c063fc3621c9a4e8bf263a8150909129618
   React-logger: b42a493ae72922d8d6a497038359240ffd457119
   React-Mapbuffer: 2cd1af67c3754dfb934948448125f0e051586db7
+  react-native-hash: f374dd8343e7f68fb714b755727aa9057f3533ba
   react-native-safe-area-context: e134b241010ebe2aacdcea013565963d13826faa
   React-nativeconfig: d753fbbc8cecc8ae413d615599ac378bbf6999bb
   React-NativeModulesApple: 4cc974c51ebc4911173bbe5d5897ad55ebc8b90f
@@ -1330,10 +1381,14 @@ SPEC CHECKSUMS:
   React-utils: dd1e04ea7105dc58637939b50f1a74a5dd634ec4
   ReactCommon: 35e3b6a1c75d462acb0155e38e627b98d5bf586b
   RNCAsyncStorage: c91d753ede6dc21862c4922cd13f98f7cfde578e
+  RNFastImage: 6a04807ac1d89b6223c1a05e009a582636ed5afa
   RNGestureHandler: 1856b437154324d11e707fad64ccb71f5dd6f222
   RNReanimated: 73b45aa4fd62e53e60e34889d7a76ef780542b39
   RNScreens: da7981497ec0f43cc09fe9f949f0c68a92209291
   RNVectorIcons: 36b9fb776f0d0722582af7c5cbde94a4157c6914
+  SDWebImage: 73c6079366fea25fa4bb9640d5fb58f0893facd8
+  SDWebImageAVIFCoder: 00310d246aab3232ce77f1d8f0076f8c4b021d90
+  SDWebImageWebPCoder: e38c0a70396191361d60c092933e22c20d5b1380
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 13c8ef87792450193e117976337b8527b49e8c03
 
