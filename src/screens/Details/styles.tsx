@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import { colors } from '../../utils/constants';
 
 const detailsStyles = StyleSheet.create({
   container: {
@@ -21,6 +22,7 @@ const detailsStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 8,
+    color:colors.text
   },
   comicsListContainer: {
     flex: 1,

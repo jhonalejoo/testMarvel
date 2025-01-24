@@ -1,13 +1,13 @@
 import * as React from 'react';
 import {Platform} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import InitView from '../screens/InitView/InitView';
 import DrawerComponent from './Drawer';
 import Details from '../screens/Details/Details';
 import { colors } from '../utils/constants';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const MyTheme = {
   ...DefaultTheme,
